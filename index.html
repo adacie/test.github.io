@@ -250,7 +250,7 @@
 }
 
 </style></head><body><div class="app"><header class="top"><div class="topline"><div><div class="brand">CAMP ORDER</div><div class="title">小叮噹團露訂餐</div><div class="date">2026 / 09 / 12</div></div><button class="install" id="installBtn">加入主畫面</button></div><div class="summary"><div class="hero-stat"><small>訂單總額</small><b id="topTotal"></b></div><div class="hero-stat"><small>已繳費</small><b id="topPaid"></b></div></div></header>
-<main><section id="home" class="screen active"><div class="section-title"><h2>總覽</h2><span></span></div><div class="cards" id="storeCards"></div></section>
+<main><section id="home" class="screen active"><div class="section-title"><h2>總覽</h2><span>店家金額與取餐金額整合顯示</span></div><div class="cards" id="storeCards"></div></section>
 <section id="pay" class="screen"><div class="pay-sticky"><div class="pay-summary"><button class="save-pay" id="savePayBtn">更新</button><button class="pay-info-btn" id="payInfoBtn" type="button">我要繳費</button></div><div id="payHint">選擇狀態後，需輸入密碼才會儲存<span id="payCloudStatus"></span><span id="paySavedAt"></span></div></div><div class="cards" id="payPeople"></div></section>
 <section id="orders" class="screen"><div class="section-title"><h2>個人訂單</h2><span id="resultCount"></span></div><div class="tools"><input id="search" placeholder="搜尋人員或餐點"><select id="storeFilter"><option value="">全部店家</option></select></div><div class="cards" id="orderPeople"></div></section>
 <section id="mine" class="screen"><div class="mine-sticky"><div class="section-title"><h2>我的訂單</h2><span>選擇後自動儲存</span></div><select class="my-select" id="myPerson"></select><div id="mySummary"></div></div><div id="myContent"></div></section></main></div>
@@ -268,10 +268,8 @@ const MINE_KEY='campOrderMine';
 // ===== 雲端同步設定（Supabase） =====
 // 請將下面兩個值換成你的 Supabase Project URL / Publishable key。
 // 這兩個值可放在 GitHub Pages 前端；絕對不要放 Secret / service_role key。
-window.SUPABASE_URL = 'https://kpsdzkpytazpoiglfhgi.supabase.co';
-window.SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_ND9bkCqm9oKMng2vDGnZVA_FBEEq8Bi';
-//const SUPABASE_URL = 'https://jkktbyeefwpmbkghskyz.supabase.co';
-//const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_4INcE-fvQJHFS7ib7r61oQ_KN97GfpI';
+const SUPABASE_URL = 'https://kpsdzkpytazpoiglfhgi.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_ND9bkCqm9oKMng2vDGnZVA_FBEEq8Bi';
 const CLOUD_TABLE = 'camp_order_payments';
 const CLOUD_EVENT = 'camp-order-payments-updated';
 
